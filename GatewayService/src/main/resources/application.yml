@@ -6,4 +6,4 @@ spring:
 # routes requests with context ../authors/
 # to a registered 'author-service'
 zuul:  routes:
-    author-service: /authors/**
+    author-service: /authors/**    book-service: /books/**
