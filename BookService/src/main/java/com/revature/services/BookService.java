@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import com.revature.commands.AuthorCommand;
 import com.revature.dtos.AuthorDTO;
 import com.revature.models.Book;
 import com.revature.repositories.BookRepository;
@@ -17,10 +18,12 @@ import com.revature.repositories.BookRepository;
 public class BookService {
 
 	BookRepository bookRepository;
-
+	AuthorCommand authorCommand;
+	
 	@Autowired
-	public BookService(BookRepository bookRepository) {
+	public BookService(BookRepository bookRepository, AuthorCommand authorCommand) {
 		this.bookRepository = bookRepository;
+		this.authorCommand = authorCommand;
 	}
 
 	public Book findById(int id) {
@@ -28,11 +31,8 @@ public class BookService {
 				() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
 		
 		// TODO Probably want to get the author data too
-		System.out.println("Sending request for author");
-		RestTemplate restTemplate = new RestTemplate();
-		String url = "http://localhost:8080/authors/" + book.getAuthorId();
-		AuthorDTO author = restTemplate.getForObject(url, AuthorDTO.class);
-		book.setAuthor(author);		
+		authorCommand.getBookAuthor(book);
+		
 		return book;
 	}
 
