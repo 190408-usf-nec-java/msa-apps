@@ -10,6 +10,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
 
+import org.springframework.web.client.RestTemplate;
+
 @Entity
 @Table(name = "authors")
 public class Author {
@@ -26,7 +28,7 @@ public class Author {
 	public int getId() {
 		return id;
 	}
-
+	
 	public void setId(int id) {
 		this.id = id;
 	}
