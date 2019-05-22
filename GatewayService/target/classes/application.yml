@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: Zuul
+
+
+# routes requests with context ../authors/
+# to a registered 'author-service'
+zuul:  routes:
+    author-service: /authors/**

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: GatewayService
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: mitch
+Implementation-Vendor-Id: com.revature.msa
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/GatewayService
+Created-By: Maven Integration for Eclipse
+
