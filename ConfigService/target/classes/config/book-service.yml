@@ -2,8 +2,6 @@ server:
   port: 8100
 
 spring:
-  application:
-    name: book-service
   datasource:
     username: ${JDBC_LOGIN}
     password: ${JDBC_PASSWORD}

@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active:
+#   When the native profile is active, the config server will utilize local
+# configuration files over an alternative mode (such as a git repo)
+    - native
+  cloud:    config:
+#   Configures what folder to look for native files within      label: config
+
+server:
+#   Default port for Spring Cloud - other applications will attempt to connect
+#   to localhost:8888 by default (though this can be configured)  port: 8888
+  
