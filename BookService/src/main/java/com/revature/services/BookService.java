@@ -64,5 +64,8 @@ public class BookService {
 		return bookRepository.getBooksByAuthorId(authorId);
 	}
 	
+	public void deleteBooksByAuthor(AuthorDTO author) {
+		this.bookRepository.deleteById(author.getId());
+	}
 	
 }

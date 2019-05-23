@@ -10,4 +10,5 @@ import com.revature.models.Book;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Integer>{
 	List<Book> getBooksByAuthorId(int authorId);
+	void deleteByAuthorId(int authorId);
 }
